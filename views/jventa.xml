@@ -1,0 +1,80 @@
+<odoo>
+	<data>
+		<!-- Campos Ocultados en la Vista "lista" (List) -->
+		<record id="jventa_view_tree" model="ir.ui.view">
+			<field name="name">jventa.carlplane.view.tree</field>
+			<field name="model">sale.order</field>
+			<field name="type">tree</field>
+			<field name="inherit_id" ref="sale.view_quotation_tree"/>
+			<field name="arch" type="xml">
+				<field name="tag_ids" position="replace">
+					<field name="tag_ids" invisible="1"/>
+				</field>
+				<field name="amount_untaxed" position="replace">
+					<field name="amount_untaxed" invisible="1"/>
+				</field>
+				<field name="amount_tax" position="replace">
+					<field name="amount_tax" invisible="1"/>
+				</field>
+				<field name="activity_ids" position="replace">
+					<field name="activity_ids" invisible="1"/>
+				</field>
+			</field>
+		</record>
+		<!-- Programacion Ventana "CREAR NUEVA VENTA DE PASAJE" -->
+		<record id="jventa_view_form" model="ir.ui.view">
+			<field name="name">jventa.carlplane.view.form</field>
+			<field name="model">sale.order</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="arch" type="xml">
+				<field name="payment_term_id" position="replace">
+					<field name="payment_term_id" invisible="1" />
+				</field>
+				<field name="require_signature" position="replace">
+					<field name="require_signature" invisible="1" />
+				</field>
+				<field name="require_payment" position="replace">
+					<field name="require_payment" invisible="1" />
+				</field>
+				<field name="client_order_ref" position="replace">
+					<field name="client_order_ref" invisible="1" />
+				</field>
+				<field name="fiscal_position_id" position="replace">
+					<field name="fiscal_position_id" invisible="1" />
+				</field>
+				<field name="analytic_account_id" position="replace">
+					<field name="analytic_account_id" invisible="1" />
+				</field>
+				<field name="origin" position="replace">
+					<field name="origin" invisible="1" />
+				</field>
+				<field name="campaign_id" position="replace">
+					<field name="campaign_id" invisible="1" />
+				</field>
+				<field name="medium_id" position="replace">
+					<field name="medium_id" invisible="1" />
+				</field>
+				<field name="source_id" position="replace">
+					<field name="source_id" invisible="1" />
+				</field>
+				<field name="partner_id" position="after">
+					<field name="date_born" />
+					<field name="passport" />
+					<field name="passport_down" />
+					<separator/>
+					<field name="vuelo_origen" />
+					<field name="vuelo_dest" />
+					<field name="date_ida" />		
+					<field name="date_regreso" />
+				</field>
+				<field name="date_order" position="after">
+					<separator/>
+					<field name="vacunado" />
+					<field name="pcr" />
+					<field name="pcr_archivo" />
+				</field>
+			</field>
+		</record>
+	</data>
+</odoo>

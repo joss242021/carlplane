@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <!-- Campos Ocultados en la Vista "List" (Tree) -->
+        <record id="jempleado_carlplane_view_tree" model="ir.ui.view">
+            <field name="name">jempleado.carlplane.view.tree</field>
+            <field name="model">hr.employee</field>
+            <field name="type">tree</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+
+                <field name="activity_ids" position="replace">
+                    <field name="activity_ids" invisible="1"/>
+                </field>
+
+                <field name="activity_date_deadline" position="replace">
+                    <field name="activity_date_deadline" invisible="1"/>
+                </field>
+
+                <field name="activity_user_id" position="replace">
+                    <field name="activity_user_id" invisible="1"/>
+                </field>
+
+                <field name="category_ids" position="replace">
+                    <field name="category_ids" invisible="1"/>
+                </field>
+                
+            </field>
+        </record>
+
+        <!-- Campos Ocultados en la Vista "Formulario" (Form) -->
+        <record id="jempleado_carlplane_view_form" model="ir.ui.view">
+            <field name="name">jempleado.carlplane.view.form</field>
+            <field name="model">hr.employee</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+                <field name="category_ids" position="replace">
+                    <field name="category_ids" invisible="1"/>
+                </field>
+
+                <field name="user_id" position="replace">
+                    <field name="user_id" invisible="1"/>
+                </field>
+
+                <field name="pin" position="replace">
+                    <field name="pin" invisible="1"/>
+                </field>
+
+                <group name="identification_group" position="replace">
+                    <group name="identification_group" invisible="1"/>
+                </group>
+
+            </field>
+        </record>
+    </data>
+</odoo>
